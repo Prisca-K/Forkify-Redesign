@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700"
+    rel="stylesheet" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+    rel="stylesheet" />
+  <link rel="shortcut icon" href="src/img/favicon.png"
+    type="image/x-icon" />
+
+  <link rel="stylesheet" href="src/sass/main.scss" />
+  <script type="module" src="src/js/controller.js"></script>
+  <title>forkify // Search over 1,000,000 recipes</title>
+</head>
+
+<body>
+  <div class="page-loader">
+    <div class="loaders">
+      <div class="loader-cont">
+        <div class="loader"></div>
+      </div>
+      <div class="img-icon"><img src="src/img/favicon.png"
+          alt=""></div>
+    </div>
+    <p class="loader-errortxt">Loading .....</p>
+  </div>
+  <div class="forkify">
+    <div class="container">
+      <header class="header">
+        <a href="1234" class="logo-imgs">
+          <img src="src/img/favicon.png" alt="Logo"
+            class="header__logo1" />
+          <img src="src/img/remlogo.png"
+            class="header__logo2" alt="">
+        </a>
+        <!-- scroller -->
+        <div class="scroller">
+          <ul class="tag-list scroller-inner">
+            <li>Search Over One Million Recipes</li>
+            <li>Spice Your Kitchen with Forkify Recipes</li>
+            <li>Save Your Favourite Recipes</li>
+          </ul>
+        </div>
+        <!-- endscroller -->
+        <div class="sun-moon-cont">
+          <div class="sun-moon sun"><i
+              class="ri-sun-line"></i></div>
+          <div class="sun-moon moon"><i
+              class="ri-moon-line"></i></div>
+        </div>
+      </header>
+      <div class="partial-cont">
+        <div class="search-results">
+          <button class="closeMobile">&times;</button>
+          <div class="resize"><i
+              class="ri-file-copy-line"></i></div>
+          <form class="search">
+            <div class="input-outlined input-outlined-js">
+              <label class="label" for="text"><i
+                  class="ri-search-line search-icon"></i><span
+                  class="search-label">search</span></label>
+              <input type="text" name="text" id="text"
+                class="search__field"
+                placeholder="Search recipes" />
+            </div>
+            <!-- <button class="btn search__btn">
+            <svg class="search__icon">
+              <use href="src/img/icons.svg#icon-search"></use>
+            </svg>
+          </button> -->
+          </form>
+          <nav class="nav">
+            <form class="sort-cont"></form>
+            <ul class="nav__list">
+              <!-- add recipe -->
+              <li class="nav__item">
+                <button
+                  class="nav__btn nav__btn--add-recipe">
+                  <div class="nav-inner">
+                    <span class="shop">
+                      <i class="ri-edit-2-line"></i>
+                    </span>
+                    <span class="nav-txt">Add recipe</span>
+                  </div>
+                </button>
+              </li>
+              <li class="nav__item navibook">
+                <button
+                  class="nav__btn nav__btn--bookmarks ">
+                  <div class="nav-inner">
+                    <span class="shop">
+                      <i class="ri-bookmark-line"></i>
+                    </span>
+                    <span class="nav-txt">Bookmarks</span>
+                  </div>
+                </button>
+
+                <!-- <div class="bookmarks">
+                  <div class="headbtnBook">
+                    <h2>My Bookmarks</h2>
+                    <button
+                      class="closebook">&times;</button>
+                  </div>
+                  <ul class="bookmarks__list">
+                    <div class="message">
+                      <div>
+                        <svg>
+                          <use
+                            href="src/img/icons.svg#icon-smile">
+                          </use>
+                        </svg>
+                      </div>
+                      <p>
+                        No bookmarks yet. Find a nice recipe
+                        and bookmark it :)
+                      </p>
+                    </div>
+                  </ul>
+                </div> -->
+              </li>
+              <!-- reipe -->
+              <li class="nav__item prev-recipe">
+                <button class="nav__btn ">
+                  <div class="nav-inner">
+                    <span class="shop">
+                      <i
+                        class="ri-file-list-3-line"></i></span>
+                    <span class="nav-txt">prev-Recipe</span>
+                  </div>
+                </button>
+              </li>
+              <!-- shoplist -->
+              <li class="nav__item">
+                <button class="nav__btn shopperBtn">
+                  <div class="nav-inner">
+                    <span class="shop">
+                      <i
+                        class="ri-shopping-cart-2-line"></i></span>
+                    <span class="nav-txt">Shopping
+                      List</span>
+                  </div>
+                </button>
+
+              </li>
+
+
+              <p class="copyright">
+                <span class="twit-txt"> &copy; Copyright by
+                </span>
+                <a class="twitter-link twit-txt"
+                  target="_blank"
+                  href="https://twitter.com/jonasschmedtman">Jonas
+                  Schmedtmann</a>
+                <a class="twitterIcon"
+                  href="https://twitter.com/jonasschmedtman">
+                  <i class="ri-twitter-fill twitIcon"></i>
+                </a>
+              </p>
+          </nav>
+          <ul class="results">
+
+          </ul>
+        </div>
+
+        <div class="resultcont">
+          <div class="ham-prev">
+            <div class="hamburg"><i
+                class="ri-menu-search-line"></i></div>
+            <div class="prev-recipe-sm">
+              <i class="ri-file-list-3-line"></i>
+            </div>
+          </div>
+          <div class="newresult">
+            <div class="home">
+              <div class="img-conts">
+                <div class="img-cont">
+                  <div class="slideImg img showing" id="">
+                    <img src="src/img/nburger2.jpg" alt="">
+                    <div class="slider-texts slider-text">
+                      <p class="top">Savour the Flavour</p>
+                      <div class="stars left">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slideImg img" id="img2">
+                    <img src="src/img/npizza1.jpg" alt="">
+                    <div class="slider-texts slider-text">
+                      <p>Bliss on a Plate!</p>
+                      <div class="stars">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slideImg img" id="img2">
+                    <img src="src/img/nsea1.jpg" alt="">
+                    <div class="slider-texts slider-text">
+                      <p>Really Good!</p>
+                      <div class="stars">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                      </div>
+
+                    </div>
+
+                  </div>
+                  <div class="slideImg img" id="img2">
+                    <img src="src/img/nrice2.jpg" alt="">
+                    <div class="slider-texts slider-text">
+                      <p>So Yummy</p>
+                      <div class="stars">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="slideImg img" id="img2">
+                    <img src="src/img/nice1.jpg" alt="">
+                    <div class="slider-texts slider-text">
+                      <p>So Yummy</p>
+                      <div class="stars">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <!-- second cont -->
+                <div class="img-cont sm-away">
+                  <div class="slideImg img2 showing" id="">
+                    <img src="src/img/nice3.jpg" alt="">
+                    <div class="slider-texts slider-text2 ">
+                      <p class="top">Savour the Flavour</p>
+                      <div class="stars left">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slideImg img2">
+                    <img src="src/img/ncake.jpg" alt="">
+                    <div class="slider-texts slider-text2">
+                      <p>Bliss on a Plate!</p>
+                      <div class="stars">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slideImg img2" id="img2">
+                    <img src="src/img/nbeans3.jpg" alt="">
+                    <div class="slider-texts slider-text2">
+                      <p>Really Good!</p>
+                      <div class="stars">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                      </div>
+
+                    </div>
+
+                  </div>
+                  <div class="slideImg img2" id="img2">
+                    <img src="src/img/ncake3.jpg" alt="">
+                    <div class="slider-texts slider-text2">
+                      <p>So Yummy</p>
+                      <div class="stars">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="slideImg img2" id="img2">
+                    <img src="src/img/nsoup1.jpg" alt="">
+                    <div class="slider-texts slider-text2">
+                      <p>So Yummy</p>
+                      <div class="stars">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <!-- 3rd cont -->
+                <div class="img-cont sm-away">
+                  <div class="slideImg img3 showing" id="">
+                    <img src="src/img/nbuns5.jpg" alt="">
+                    <div class="slider-texts slider-text3 ">
+                      <p class="top">Savour the Flavour</p>
+                      <div class="stars left">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slideImg img3">
+                    <img src="src/img/image2.jpeg" alt="">
+                    <div class="slider-texts slider-text3">
+                      <p>Bliss on a Plate!</p>
+                      <div class="stars">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slideImg img3" id="img3">
+                    <img src="src/img/nbuns4.jpg" alt="">
+                    <div class="slider-texts slider-text3">
+                      <p>Really Good!</p>
+                      <div class="stars">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                      </div>
+
+                    </div>
+
+                  </div>
+                  <div class="slideImg img3" id="img3">
+                    <img src="src/img/pizza.webp" alt="">
+                    <div class="slider-texts slider-text3">
+                      <p>So Yummy</p>
+                      <div class="stars">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="slideImg img3" id="img3">
+                    <img src="src/img/burger1.webp" alt="">
+                    <div class="slider-texts slider-text3">
+                      <p>So Yummy</p>
+                      <div class="stars">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="h2">
+                <h2>Quick Searches</h2>
+              </div>
+              <div class="direct-boxes">
+                <div class="boxImgTxt" id="img3">
+                  <div class="boxImg"><img
+                      src="src/img/npizza1.jpg" alt="">
+                  </div>
+                  <div class="box-text">pizzas
+                  </div>
+                </div>
+                <div class="boxImgTxt" id="img3">
+                  <div class="boxImg"><img
+                      src="src/img/nburger3.jpg" alt="">
+                  </div>
+                  <div class="box-text">burgers
+                  </div>
+                </div>
+                <div class="boxImgTxt" id="img3">
+                  <div class="boxImg"><img
+                      src="src/img/nrice4.jpg" alt=""></div>
+                  <div class="box-text">rice
+                  </div>
+                </div>
+                <div class="boxImgTxt" id="img3">
+                  <div class="boxImg"><img
+                      src="src/img/nice3.jpg" alt=""></div>
+                  <div class="box-text">ice creams
+                  </div>
+                </div>
+                <div class="boxImgTxt" id="img3">
+                  <div class="boxImg"><img
+                      src="src/img/nsoup1.jpg" alt=""></div>
+                  <div class="box-text">soups
+                  </div>
+                </div>
+                <div class="boxImgTxt" id="img3">
+                  <div class="boxImg"><img
+                      src="src/img/nsea2.jpg" alt=""></div>
+                  <div class="box-text">sea foods
+                  </div>
+                </div>
+                <div class="boxImgTxt" id="img3">
+                  <div class="boxImg"><img
+                      src="src/img/ncake.jpg" alt=""></div>
+                  <div class="box-text">cakes
+                  </div>
+                </div>
+                <div class="boxImgTxt" id="img3">
+                  <div class="boxImg"><img
+                      src="src/img/nchicken3.jpg" alt="">
+                  </div>
+                  <div class="box-text">chicken
+                  </div>
+                </div>
+                <div class="boxImgTxt" id="img3">
+                  <div class="boxImg"><img
+                      src="src/img/nbeef3.jpg" alt=""></div>
+                  <div class="box-text">beef
+                  </div>
+                </div>
+                <div class="boxMore" id="img3">
+                  <div class="boxImg"><img
+                      src="src/img/nmore1.jpg" alt="">
+                  </div>
+                  <div class="box-text">more
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- pagination -->
+          </div>
+          <div class="pagination">
+          </div>
+          <!-- bookmark -->
+          <div class="bookmarks">
+            <div class="headbtnBook">
+              <h2>My Bookmarks</h2>
+              <button class="closebook">&times;</button>
+            </div>
+            <ul class="bookmarks__list">
+              <div class="message">
+                <div>
+                  <svg>
+                    <use
+                      href="src/img/icons.svg#icon-smile">
+                    </use>
+                  </svg>
+                </div>
+                <p>
+                  No bookmarks yet. Find a nice recipe
+                  and bookmark it :)
+                </p>
+              </div>
+            </ul>
+          </div>
+          <!-- shoplist -->
+          <div class="shoplist">
+            <button class="closeShop">&times;</button>
+            <h2 class="mainH2">My Shopping List</h2>
+            <div class="yesmodal">
+              <p>Do you want to delete this ingredient
+                ?
+              </p>
+              <button class="yesbtn">Yes</button>
+              <button class="nobtn">No</button>
+            </div>
+            <div class="headbtn">
+              <h2>My Shopping List</h2>
+              <button class="shopcloser2">&times;</button>
+            </div>
+            <ul class="shoplist__list">
+
+              <div class="message">
+                <div>
+                  <svg>
+                    <use
+                      href="src/img/icons.svg#icon-smile">
+                    </use>
+                  </svg>
+                </div>
+                <p>
+                  No items yet. Find a nice recipe and
+                  add it's ingredients
+                  to your list :)
+                </p>
+
+              </div>
+            </ul>
+          </div>
+        </div>
+        <!-- partial end -->
+
+      </div>
+      <!-- main Container -->
+    </div>
+    <!-- recipe -->
+
+    <div class="overlay1 hidden"></div>
+    <div class="recipe-window hidden">
+      <div class="part1">
+        <div class="toppers">
+          <a href="1234" class="logo-imgsrec">
+            <img src="src/img/favicon.png" alt="Logo"
+              class="header__logorec1" />
+            <img src="src/img/remlogo.png"
+              class="header__logorec2" alt="">
+          </a>
+          <h1 class="recipe-title"><i
+              class="ri-file-list-3-line"></i>Recipe</h1>
+          <button class="modee"> <i
+              class="ri-arrow-left-line"></i> <span
+              class="back-to-home">Back to
+              home</span></button>
+        </div>
+        <div class="added addShop">Added to shopping list
+        </div>
+        <div class="added addBook">Added to bookmarks</div>
+        <div class="added remBook">Removed from bookmarks
+        </div>
+      </div>
+      <div class="recipe">
+        <div class="message">
+          <div>
+            <svg>
+              <use href="src/img/icons.svg#icon-smile">
+              </use>
+            </svg>
+          </div>
+          <p>
+            No Recipe Searches Yet. :)
+          </p>
+
+        </div>
+        <!-- <div class="spinner">
+        <svg>
+          <use href="src/img/icons.svg#icon-loader"></use>
+        </svg>
+      </div> -->
+
+        <!-- <div class="error">
+          <div>
+            <svg>
+              <use href="src/img/icons.svg#icon-alert-triangle"></use>
+            </svg>
+          </div>
+          <p>No recipes found for your query. Please try again!</p>
+        </div> -->
+
+        <!--
+      <figure class="recipe__fig">
+        <img src="src/img/test-1.jpg" alt="Tomato" class="recipe__img" />
+        <h1 class="recipe__title">
+          <span>Pasta with tomato cream sauce</span>
+        </h1>
+      </figure>
+
+      <div class="recipe__details">
+        <div class="recipe__info">
+          <svg class="recipe__info-icon">
+            <use href="src/img/icons.svg#icon-clock"></use>
+          </svg>
+          <span class="recipe__info-data recipe__info-data--minutes">45</span>
+          <span class="recipe__info-text">minutes</span>
+        </div>
+        <div class="recipe__info">
+          <svg class="recipe__info-icon">
+            <use href="src/img/icons.svg#icon-users"></use>
+          </svg>
+          <span class="recipe__info-data recipe__info-data--people">4</span>
+          <span class="recipe__info-text">servings</span>
+
+          <div class="recipe__info-buttons">
+            <button class="btn--tiny btn--increase-servings">
+              <svg>
+                <use href="src/img/icons.svg#icon-minus-circle"></use>
+              </svg>
+            </button>
+            <button class="btn--tiny btn--increase-servings">
+              <svg>
+                <use href="src/img/icons.svg#icon-plus-circle"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="recipe__user-generated">
+          <svg>
+            <use href="src/img/icons.svg#icon-user"></use>
+          </svg>
+        </div>
+        <button class="btn--round">
+          <svg class="">
+            <use href="src/img/icons.svg#icon-bookmark-line"></use>
+          </svg>
+        </button>
+      </div>
+
+      <div class="recipe__ingredients">
+        <h2 class="heading--2">Recipe ingredients</h2>
+        <ul class="recipe__ingredient-list">
+          <li class="recipe__ingredient">
+            <svg class="recipe__icon">
+              <use href="src/img/icons.svg#icon-check"></use>
+            </svg>
+            <div class="recipe__quantity">1000</div>
+            <div class="recipe__description">
+              <span class="recipe__unit">g</span>
+              pasta
+            </div>
+          </li>
+
+          <li class="recipe__ingredient">
+            <svg class="recipe__icon">
+              <use href="src/img/icons.svg#icon-check"></use>
+            </svg>
+            <div class="recipe__quantity">0.5</div>
+            <div class="recipe__description">
+              <span class="recipe__unit">cup</span>
+              ricotta cheese
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="recipe__directions">
+        <h2 class="heading--2">How to cook it</h2>
+        <p class="recipe__directions-text">
+          This recipe was carefully designed and tested by
+          <span class="recipe__publisher">The Pioneer Woman</span>. Please check out
+          directions at their website.
+        </p>
+        <a
+          class="btn--small recipe__btn"
+          href="http://thepioneerwoman.com/cooking/pasta-with-tomato-cream-sauce/"
+          target="_blank"
+        >
+          <span>Directions</span>
+          <svg class="search__icon">
+            <use href="src/img/icons.svg#icon-arrow-right"></use>
+          </svg>
+        </a>
+      </div>
+      -->
+      </div>
+    </div>
+    <!-- recipe end -->
+    <div class="overlay hidden"></div>
+    <div class="add-recipe-window hidden">
+      <div class="toppers">
+        <a href="1234" class="logo-imgsrec">
+          <img src="src/img/favicon.png" alt="Logo"
+            class="header__logorec1" />
+          <img src="src/img/remlogo.png"
+            class="header__logorec2" alt="">
+        </a>
+        <h1 class="recipe-title"><i
+            class="ri-edit-line"></i>Add Recipe</h1>
+        <button class="btn--close-modal"> <i
+            class="ri-arrow-left-line"></i> <span
+            class="back-to-home">Back to
+            home</span></button>
+      </div>
+
+      <form class="upload">
+        <div class="uploadcolumns">
+          <div class="upload__column">
+            <h3 class="upload__heading">Recipe data</h3>
+            <div class="pair">
+              <label>Title</label>
+              <input value="TEST" required name="title"
+                type="text" />
+            </div>
+            <div class="pair">
+              <label>URL</label>
+              <input value="TEST" required name="sourceUrl"
+                type="text" />
+            </div>
+            <div class="pair">
+              <label>Image URL</label>
+              <input value="TEST" required name="image"
+                type="text" />
+            </div>
+            <div class="pair">
+              <label>Publisher</label>
+              <input value="TEST" required name="publisher"
+                type="text" />
+            </div>
+            <div class="pair">
+              <label>Prep time</label>
+              <input value="23" required name="cookingTime"
+                type="number" class="reduce" />
+            </div>
+            <div class="pair">
+              <label>Servings</label>
+              <input value="23" required name="servings"
+                type="number" class="reduce" />
+            </div>
+          </div>
+
+          <div class="upload__column">
+            <h3 class="upload__heading">Ingredients</h3>
+            <div class="pair">
+              <label>Ingredient 1</label>
+              <input value="0.5,kg,Rice" type="text"
+                required name="ingredient-1"
+                placeholder="Format: 'Quantity,Unit,Description'" />
+            </div>
+            <div class="pair">
+              <label>Ingredient 2</label>
+              <input value="1,,Avocado" type="text"
+                name="ingredient-2"
+                placeholder="Format: 'Quantity,Unit,Description'" />
+            </div>
+            <div class="pair">
+              <label>Ingredient 3</label>
+              <input value=",,salt" type="text"
+                name="ingredient-3"
+                placeholder="Format: 'Quantity,Unit,Description'" />
+            </div>
+            <div class="pair">
+              <label>Ingredient 4</label>
+              <input type="text" name="ingredient-4"
+                placeholder="Format: 'Quantity,Unit,Description'" />
+            </div>
+            <div class="pair">
+              <label>Ingredient 5</label>
+              <input type="text" name="ingredient-5"
+                placeholder="Format: 'Quantity,Unit,Description'" />
+            </div>
+            <div class="pair">
+              <label>Ingredient 6</label>
+              <input type="text" name="ingredient-6"
+                placeholder="Format: 'Quantity,Unit,Description'" />
+            </div>
+          </div>
+        </div>
+        <button class="btn upload__btn">
+          <svg>
+            <use href="src/img/icons.svg#icon-upload-cloud">
+            </use>
+          </svg>
+          <span>Upload</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+</body>
+
+</html>
