@@ -2,6 +2,7 @@
   // padding: 3rem 0;
   display: flex;
   flex-direction: column;
+  height: 100vh;
   // align-items: center;
   width: 8.5%;
   padding: 2rem 2.5rem;
@@ -9,13 +10,14 @@
   border-top-right-radius: 7rem;
   box-shadow: 0 0 1px 0.1px rgba(0, 0, 0, 1);
   @media only screen and (max-width: $bp-small) {
+    overflow: hidden;
     // position: relative;
     position: absolute;
     box-shadow: 0 0 0 0 rgb(0, 0, 0);
     top: 13rem;
     left: -100rem;
     width: 55%;
-    height: 89vh;
+    height: calc(100vh - 62em);
     transition: all 200ms ease-in-out;
     background-color: var(--color-grey-light-2);
     // background-color: blue;
@@ -31,8 +33,9 @@
     top: 8.5rem;
     left: -100rem;
     width: 100%;
+
     // min-height: 82vh;
-    min-height: 90vh;
+    height: calc(100vh - 8rem);
     transition: all 200ms ease-in-out;
     background-color: var(--color-grey-light-2);
     // background-color: red;
@@ -228,6 +231,10 @@
   padding-bottom: 2rem;
   justify-content: flex-start;
   height: fit-content;
+  .search-name {
+    color: #fff;
+    font-size: 4rem;
+  }
   .home {
     display: flex;
     flex-direction: column;

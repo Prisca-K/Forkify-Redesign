@@ -139,6 +139,7 @@ const lazyLoad = function () {
 const controlSearchResults = async function () {
   try {
     const book = document.querySelector(".bookmarks");
+    const searchname = document.querySelector(".searchname");
     book.classList.remove("show");
     paginationView._clear();
     resultsView.renderSpinner();
@@ -146,8 +147,9 @@ const controlSearchResults = async function () {
     // 1) Get search query
     const query = searchView.getQuery();
     if (!query) return;
-
+    searchname.innerHTML = "query";
     // 2) Load search results
+    console.log(searchname);
     await model.loadSearchResults(query);
     // 3) Render results
     resultsView.render(model.getSearchResultsPage());

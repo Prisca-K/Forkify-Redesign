@@ -164,9 +164,17 @@ body {
   }
 }
 .partial-cont {
+  margin-top: 9rem;
   display: flex;
   gap: 0.5rem;
   width: 100%;
+  overflow: hidden !important;
+  @media only screen and (max-width: $bp-small) {
+    margin-top: 13rem;
+  }
+  @media only screen and (max-width: $bp-smallest) {
+    margin-top: 8.5rem;
+  }
 }
 .dark-mode {
   --color-grey-light-1: #373737; // Light background
