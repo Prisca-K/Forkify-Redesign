@@ -49,11 +49,12 @@
     top: 29rem;
     min-height: 100vh;
   }
+
   .toppers {
     // position: absolute;
     top: 0;
     right: 0;
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     background-color: var(--icon-color);
@@ -72,6 +73,7 @@
     // }
     @media only screen and (max-width: $bp-small) {
       height: 12rem;
+      display: flex;
     }
     @media only screen and (max-width: $bp-smallest) {
       height: 8rem;
@@ -112,7 +114,7 @@
       }
     }
 
-    .btn--close-modal {
+    .modeup {
       font-family: inherit;
       color: inherit;
       width: fit-content;
@@ -157,33 +159,35 @@
       }
     }
   }
-  // .btn--close-modal {
-  //   font-family: inherit;
-  //   color: inherit;
-  //   position: absolute;
-  //   top: 0.5rem;
-  //   right: 1.6rem;
-  //   width: 4rem;
-  //   height: 3rem;
-  //   font-size: 5rem;
-  //   cursor: pointer;
-  //   border: none;
-  //   background: none;
-  //   color: $color-grey-dark-2;
-  //   @media only screen and (max-width: $bp-small) {
-  //     padding-top: 1rem;
-  //     top: 3rem;
-  //     right: 3rem;
-  //   }
-  //   @media only screen and (max-width: $bp-smallest) {
-  //     top: -1rem;
-  //     right: 2rem;
-  //   }
-  //   @media only screen and (max-width: 320px) {
-  //     top: -3rem;
-  //     right: 1rem;
-  //   }
-  // }
+  .btn--close-modal {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-transform: lowercase;
+    color: inherit;
+    position: absolute;
+    top: 0.5rem;
+    right: 1.6rem;
+    width: 4rem;
+    height: 3rem;
+    font-size: 5rem;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: $color-grey-dark-2;
+    @media only screen and (max-width: $bp-small) {
+      padding-top: 1rem;
+      top: 3rem;
+      right: 3rem;
+      display: none;
+    }
+    @media only screen and (max-width: $bp-smallest) {
+      top: -1rem;
+      right: 2rem;
+    }
+    @media only screen and (max-width: 320px) {
+      top: -3rem;
+      right: 1rem;
+    }
+  }
 }
 
 .overlay {

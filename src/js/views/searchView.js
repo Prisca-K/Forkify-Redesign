@@ -24,11 +24,13 @@ class SearchView extends View {
       const overlaycont = document.querySelector(".resultcont");
       overlaycont.classList.remove("overresult");
       const newres = document.querySelector(".newresult");
+      // newres.style.height = "52rem";
       newres.style.gap = "0.5rem";
       left.style.left = "-100rem";
       newres.style.flexDirection = "row";
       newres.style.justifyContent = "center";
-      newres.style.paddingBottom = "7rem";
+      newres.style.paddingBottom = "4rem";
+      newres.style.overflow = "hidden";
       // gap: 0.5rem;
       // justify-content: center;
       // padding-bottom: 8rem;

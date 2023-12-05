@@ -116,7 +116,15 @@ export const loadSearchResults = async function (query) {
     });
 
     state.search.page = 1;
-  } catch (err) {
+    const searchname = document.querySelector(".searchname");
+    const searchnameham = document.querySelector(".searchnameham");
+    const modquery = query.charAt(0).toUpperCase() + query.slice(1);
+    console.log(query[0]);
+    searchname.innerHTML = `Searches for ${modquery}`;
+    searchnameham.innerHTML = `Searches for ${modquery}`;
+    const newres = document.querySelector(".newresult");
+  
+    } catch (err) {
     err = "TypeError: Failed to Fetch"
       ? (err =
           "Connection failed! Please check your connection and Try again :)")

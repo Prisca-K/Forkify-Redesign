@@ -138,18 +138,18 @@ const lazyLoad = function () {
 
 const controlSearchResults = async function () {
   try {
-    const book = document.querySelector(".bookmarks");
+    const searchnameham = document.querySelector(".searchnameham");
     const searchname = document.querySelector(".searchname");
+    const book = document.querySelector(".bookmarks");
     book.classList.remove("show");
     paginationView._clear();
     resultsView.renderSpinner();
-
+    searchnameham.innerHTML = "";
+    searchname.innerHTML = "";
     // 1) Get search query
     const query = searchView.getQuery();
     if (!query) return;
-    searchname.innerHTML = "query";
     // 2) Load search results
-    console.log(searchname);
     await model.loadSearchResults(query);
     // 3) Render results
     resultsView.render(model.getSearchResultsPage());
@@ -176,8 +176,8 @@ const controlQuickSearch = async function () {
           const newres = document.querySelector(".newresult");
           newres.style.flexDirection = "row";
           newres.style.justifyContent = "center";
-          newres.style.paddingBottom = "7rem";
-          // newres.style.gap = "1rem";
+          newres.style.paddingBottom = "4rem";
+          newres.style.gap = "0.5rem";
           book.classList.remove("show");
           paginationView._clear();
           resultsView.renderSpinner();
