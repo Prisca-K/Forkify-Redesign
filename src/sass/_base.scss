@@ -112,7 +112,7 @@ body {
     min-height: 100vh;
     // display: flex;
     // flex-direction: column;
-    background-color: var(--color-grey-light-1); // Light background
+    // background-color: var(--color-grey-light-1); // Light background
     // background-color: blue;
 
     overflow: hidden !important;
@@ -127,13 +127,15 @@ body {
 .container {
   max-width: 100vw;
   // min-height: 117rem;
+  // max-height: 100vh;
+  min-height: 100vh;
   max-height: 100vh;
-  min-height: 100%;
   // margin: 2rem auto;
   // background-color: var(--color-grey-light-2);
   background-image: var(--gradient3);
   // border-radius: 9px;
   overflow: hidden !important;
+  position: relative;
   // box-shadow: 0 2rem 6rem 0.5rem rgba(var(--color-grey-dark-1), 0.2);
 
   // display: grid;
@@ -155,12 +157,10 @@ body {
     border-radius: 0;
   }
   @media only screen and (max-width: $bp-small) {
-    max-height: 100vh;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-    // background-color: red;
+    overflow: hidden !important;
+    background-color: red;
   }
 }
 .partial-cont {
@@ -265,7 +265,6 @@ body {
         width: 20rem;
         height: 20rem;
       }
-      
     }
     @media only screen and (max-width: $bp-small) {
       width: 30em;
@@ -321,7 +320,6 @@ body {
     @media only screen and (max-width: $bp-small) {
       font-size: 3rem;
       max-width: 40rem;
-
     }
     @media only screen and (max-width: $bp-smallest) {
       font-size: 2rem;

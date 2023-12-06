@@ -177,7 +177,7 @@ const controlQuickSearch = async function () {
           newres.style.flexDirection = "row";
           newres.style.justifyContent = "center";
           newres.style.paddingBottom = "4rem";
-          newres.style.gap = "0.5rem";
+          newres.style.gap = "1rem";
           book.classList.remove("show");
           paginationView._clear();
           resultsView.renderSpinner();

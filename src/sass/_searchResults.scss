@@ -9,6 +9,8 @@
   background-color: var(--color-grey-light-2);
   border-top-right-radius: 7rem;
   box-shadow: 0 0 1px 0.1px rgba(0, 0, 0, 1);
+  position: relative;
+  z-index: 77;
   @media only screen and (max-width: $bp-small) {
     overflow: hidden !important;
     // position: relative;
@@ -93,16 +95,16 @@
     }
   }
 }
-.results {
-  list-style: none;
-  margin-bottom: 2rem;
-  position: relative;
-  @media only screen and (max-width: $bp-smallest) {
-    overflow: hidden;
-    position: relative;
-    // background-color: red;
-  }
-}
+// .results {
+//   list-style: none;
+//   margin-bottom: 2rem;
+//   position: relative;
+//   @media only screen and (max-width: $bp-smallest) {
+//     overflow: hidden;
+//     position: relative;
+//     // background-color: red;
+//   }
+// }
 .overresult {
   &::before {
     content: "";
@@ -124,21 +126,23 @@
 }
 .resultcont {
   position: relative;
-  padding-left: 0;
+  padding: 0;
   background-color: var(--color-grey-light-2);
   box-shadow: 0 0 1px 0.1px rgba(0, 0, 0, 1);
-  // background-color: red;
+  // background-color: black;
+  // padding-inline: 1rem;
   // adjusted
 
-  margin: 0rem;
+  margin: 0;
   display: flex;
-  justify-content: start;
-  align-items: center;
+  justify-content: center !important;
+  align-items: center !important;
   flex-direction: column;
 
   width: 100%;
   height: calc(100vh - 9rem);
   border-top-left-radius: 8rem;
+  overflow: hidden;
   .searchname {
     color: #fff;
     font-size: 3rem;
@@ -146,6 +150,7 @@
     background-image: var(--gradient2);
     background-clip: text;
     margin-top: 2rem;
+    display: none;
     @media only screen and (max-width: $bp-small) {
       display: none;
     }
@@ -225,7 +230,6 @@
     }
   }
   @media only screen and (max-width: $bp-small) {
-    display: block;
     // background-color: red;
     border-top-left-radius: 0;
     height: calc(100vh - 13rem);
@@ -241,29 +245,22 @@
 .newresult {
   // padding: 2rem;
   flex-wrap: wrap;
-  padding-left: 0;
-  padding-right: 0;
   display: flex;
   // background-color: blue;
-  // gap: 0.5rem;
-  // justify-content: center;
-  // padding-bottom: 8rem;
-  // flex-direction: column;
   align-items: center;
   // adjusted
-  // padding-top: 6rem;
   width: 100%;
-  padding: 1rem;
   flex-wrap: wrap;
-  // border-top-left-radius: 0;
+  padding: 0;
+  padding-inline: 1rem;
+  margin: 0;
   // more adjust
   gap: 1rem;
   flex-direction: column;
-  padding-top: 0;
-  padding-bottom: 2rem;
   justify-content: flex-start;
-  // overflow: hidden;
-  height: fit-content;
+  overflow: hidden;
+  // min-height: calc(100vh - 9rem);
+  min-height: 100%;
 
   .home {
     display: flex;
@@ -275,8 +272,8 @@
     // height: fit-content;
     align-items: center;
     width: 100%;
-    min-height: 89vh;
-    max-height: 89vh;
+    min-height: 100%;
+    max-height: 100%;
     gap: 0;
     // z-index: 100;
     // background-color: red;
@@ -285,7 +282,7 @@
       gap: 1rem;
       border-top-left-radius: 0;
       // height: 100vh;
-      position: fixed;
+      position: absolute;
       min-height: 80vh;
       max-height: 80vh;
       // top: 10rem;
@@ -651,7 +648,8 @@
     // position: absolute;
     // top: 12rem;
     left: 0;
-    height: 82%;
+    min-height: 82%;
+    max-height: 82%;
     // height: fit-content;
     width: 100%;
     // padding-inline: 2rem;
@@ -665,8 +663,8 @@
   }
   @media only screen and (max-width: $bp-smallest) {
     // top: 8rem;
-    gap: 0.9rem;
-    height: 80%;
+    gap: 3rem;
+    // min-height: 82%;
 
     // padding-bottom: 15rem;
     // background-color: red;
@@ -766,12 +764,14 @@
 }
 .copyright {
   // background-color: red;
-  bottom: 1rem;
+  // bottom: 1rem;
+  bottom: 11rem;
   position: absolute;
   color: var(--color-grey-dark-2);
   font-size: 1.2rem;
   // padding: 0 3.5rem;
   margin-top: 8rem;
+  z-index: 88;
   .twit-txt {
     display: none;
   }

@@ -1,8 +1,8 @@
 .recipe-window {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
   min-width: 100vw;
   min-height: 100vh;
   max-height: 100vh;
@@ -14,47 +14,8 @@
   z-index: 100;
   transition: all 0.5s;
   display: flex;
-  // justify-content: center;
-  // align-items: center;
   flex-direction: column;
-  // @media only screen and (max-width: $bp-small) {
-  //   // position: sticky;
-  //   justify-content: center;
-  //   align-items: center;
-  //   flex-direction: row;
-  //   min-width: 100vw;
-  //   max-width: 100vw;
-  //   // top: 74rem;
-  //   min-height: 100vh;
-  //   max-height: 80vh;
-  //   overflow: hidden;
-  //   background-color: var(--color-grey-light-2);
-  //   // background-color: red;
-  //   border-radius: 0;
-  //   padding: 0;
-  //   padding-top: 8rem;
-  //   // padding-inline: 1rem;
 
-  //   // overflow-y: scroll;
-  //   box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0);
-  // }
-  // @media only screen and (max-width: $bp-smallest) {
-  //   // position: sticky;
-  //   min-width: 100vw;
-  //   max-width: 100vw;
-  //   // top: 56rem;
-  //   min-height: 100vh;
-  //   max-height: 100vh;
-  //   overflow: hidden;
-  //   background-color: var(--color-grey-light-2);
-  //   // background-color: blue;
-  //   border-radius: 0;
-  //   padding: 0;
-  //   padding-top: 12rem;
-  //   // padding-inline: 1rem;
-
-  //   // overflow-y: scroll;
-  // }
 
   @media only screen and (max-width: $bp-small) {
     overflow: hidden;

@@ -123,8 +123,7 @@ export const loadSearchResults = async function (query) {
     searchname.innerHTML = `Searches for ${modquery}`;
     searchnameham.innerHTML = `Searches for ${modquery}`;
     const newres = document.querySelector(".newresult");
-  
-    } catch (err) {
+  } catch (err) {
     err = "TypeError: Failed to Fetch"
       ? (err =
           "Connection failed! Please check your connection and Try again :)")
@@ -524,8 +523,8 @@ export const offcanvas = function () {
       });
       console.log(droping);
       console.log(droping2);
-      newres.style.gap = "0.8rem";
-      newres.style.paddingInline = "1rem";
+      newres.style.gap = "0.5rem";
+      // newres.style.paddingInline = "1rem";
       searchicon.style.display = "none";
       searchlabel.style.display = "block";
       searchicon.style.transition = "display 1s ease";
@@ -606,8 +605,9 @@ export const offcanvas = function () {
       span.style.transition = "display 1s ease";
       // resize
       resize.addEventListener("click", () => {
+        searchfield.value = "";
         pagination.style.left = "35rem";
-        newres.style.gap = "1rem";
+        newres.style.gap = "0.5rem";
         bmark.style.maxWidth = "124rem";
         bmark.style.minWidth = "124rem";
         // newres.style.paddingInline = "10rem";
@@ -634,7 +634,7 @@ export const offcanvas = function () {
         tweettxt.forEach((txt) => {
           txt.style.display = "none";
         });
-        copy.style.bottom = "1rem";
+        copy.style.bottom = "11rem";
         inni.forEach((inn) => {
           inn.style.display = "none";
           inn.style.transition = "display 1s ease";
@@ -812,7 +812,7 @@ export const offcanvas = function () {
         tweettxt.forEach((txt) => {
           txt.style.display = "none";
         });
-        copy.style.bottom = "1rem";
+        copy.style.bottom = "11rem";
         inni.forEach((inn) => {
           inn.style.display = "none";
           inn.style.transition = "display 1s ease";
