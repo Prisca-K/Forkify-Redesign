@@ -141,12 +141,14 @@ const controlSearchResults = async function () {
     const searchnameham = document.querySelector(".searchnameham");
     const searchname = document.querySelector(".searchname");
     const book = document.querySelector(".bookmarks");
+    searchnameham.innerHTML = "";
+    searchname.innerHTML = "";
+
     book.classList.remove("show");
     paginationView._clear();
     resultsView.renderSpinner();
-    searchnameham.innerHTML = "";
-    searchname.innerHTML = "";
     // 1) Get search query
+
     const query = searchView.getQuery();
     if (!query) return;
     // 2) Load search results
@@ -174,10 +176,13 @@ const controlQuickSearch = async function () {
       box.addEventListener("click", async () => {
         try {
           const newres = document.querySelector(".newresult");
+          const searchname = document.querySelector(".searchname");
           newres.style.flexDirection = "row";
           newres.style.justifyContent = "center";
           newres.style.paddingBottom = "4rem";
+          newres.style.minHeight = "5rem";
           newres.style.gap = "1rem";
+          searchname.style.display = "flex";
           book.classList.remove("show");
           paginationView._clear();
           resultsView.renderSpinner();
@@ -311,6 +316,10 @@ const controlSort = function () {
   const input1 = document.querySelector(".input1");
   const box1 = input1.querySelector(".box1");
   console.log(box1);
+  const searchnameham = document.querySelector(".searchnameham");
+  const searchname = document.querySelector(".searchname");
+  searchnameham.innerHTML = "";
+  searchname.innerHTML = "";
   // window.location.reload();
 };
 controlSort();

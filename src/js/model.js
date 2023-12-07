@@ -196,6 +196,12 @@ export const loadSearchResultsSort = async function (query, value, ing = true) {
       console.log(statesort.search.results);
       state.search.page = 1;
     });
+    const searchname = document.querySelector(".searchname");
+    const searchnameham = document.querySelector(".searchnameham");
+    const modquery = query.charAt(0).toUpperCase() + query.slice(1);
+    console.log(query[0]);
+    searchname.innerHTML = `Searches for ${modquery}`;
+    searchnameham.innerHTML = `Searches for ${modquery}`;
   } catch (err) {
     err = "TypeError: Failed to Fetch"
       ? (err =
