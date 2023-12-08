@@ -192,6 +192,7 @@
       }
       @media only screen and (max-width: $bp-smallest) {
         // background-color: red;
+        max-width: 25rem;
         font-size: 2.5rem;
       }
       @media only screen and (max-width: 340px) {
@@ -489,6 +490,7 @@
       }
       @media only screen and (max-width: $bp-smallest) {
         min-height: 46vh;
+        padding-bottom: 5rem;
         gap: 1rem;
       }
       @media only screen and (max-width: 320px) {
@@ -665,8 +667,8 @@
   @media only screen and (max-width: $bp-smallest) {
     // top: 8rem;
     gap: 3rem;
-    min-height: 79%;
-    max-height: 79%;
+    min-height: 75%;
+    max-height: 75%;
 
     // padding-bottom: 15rem;
     // background-color: red;
@@ -943,10 +945,10 @@
       transition: all 300ms ease-in-out;
       background-image: var(--gradient3);
       transform: translateX(20px);
-      .rem-icon{
+      .rem-icon {
         color: var(--color-grad-1);
       }
-      .remicon1{
+      .remicon1 {
         color: var(--color-grad-1);
       }
     }

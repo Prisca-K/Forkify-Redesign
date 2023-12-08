@@ -181,11 +181,11 @@ class RecipeView extends View {
   toggleWindow21() {
     this._overlay2.classList.remove("hidden");
     this._window.classList.remove("hidden");
-    if (!this._prevRecipe.classList.contains("trans-left")) {
-      this._prevRecipe.classList.add("trans-left");
-    } else {
-      this._prevRecipe.classList.remove("trans-left");
-    }
+    // if (!this._prevRecipe.classList.contains("trans-left")) {
+    //   this._prevRecipe.classList.add("trans-left");
+    // } else {
+    //   this._prevRecipe.classList.remove("trans-left");
+    // }
   }
 
   _addHandlerHideWindow2() {
