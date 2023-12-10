@@ -428,6 +428,9 @@
     @media only screen and (max-width: $bp-small) {
       font-size: 3rem;
     }
+    @media only screen and (max-width: 320px) {
+      font-size: 3rem;
+    }
     // background-color: white;
   }
   .prev-recipe {
@@ -456,75 +459,98 @@
     @media only screen and (max-width: $bp-smallest) {
       margin-bottom: 1rem;
     }
+    @media only screen and (max-width: 320px) {
+      margin-bottom: 0rem;
+    }
   }
   .navibook {
     // margin-bottom: 0 !important;
   }
   &__btn {
-    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 1.2px rgba($color-grey-dark-2, 0.6);
+    border-radius: 0.8rem;
+    padding: 0.35rem 0.5rem;
+    background-image: var(--gradient2);
+    border: none;
     font-family: inherit;
     color: $color-grey-dark-2;
     font-size: 1.7rem;
     font-weight: 700;
     text-transform: uppercase;
-    background: none;
-    border: none;
-    background-image: var(--gradient2);
-    cursor: pointer;
-    padding: 1.2rem 0.5rem;
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: inset 0 0 0 1.2px rgba($color-grey-dark-2, 0.6);
-    border-radius: 0.8rem;
     .nav-inner {
       width: 100%;
-      height: 150%;
+      height: 100%;
+      padding: 0.8rem 1.3rem;
+      // padding: 0.8rem 0;
       background-color: var(--color-grey-light-1);
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 2rem;
-      // padding-inline: 2rem;
-      padding-inline: 1.3rem;
-      box-shadow: inset 0 0 0 1.2px rgba($color-grey-dark-2, 0.6);
       @media only screen and (max-width: $bp-small) {
         // background-color: red;
         border-radius: 5rem;
         width: 98%;
         height: 120%;
+        padding: 2rem 2rem;
+      }
+      @media only screen and (max-width: $bp-smallest) {
+        // background-color: red;
+        border-radius: 5rem;
+        width: 100%;
+        height: 100%;
+        padding: 1.3rem 2rem;
+      }
+      @media only screen and (max-width: 320px) {
+        // background-color: red;
+        border-radius: 5rem;
+        width: 100%;
+        height: 100%;
+        padding: 0.6rem 0.5rem;
       }
       span:nth-child(2) {
         // color: black;
         display: none;
         margin-left: 0.7rem;
       }
+      .nav-txt {
+        font-size: 1.7rem;
+         @media only screen and (max-width: $bp-small) {
+        font-size: 2.5rem;
+
+        display: flex;
+      }
+      @media only screen and (max-width: $bp-smallest) {
+        font-size: 2.2rem;
+      }
+      }
     }
     @media only screen and (max-width: $bp-small) {
       border-radius: 5rem;
-      // background-color: red;
-      font-size: 2.5rem;
       width: 50vw;
       margin-inline: 0 auto;
       justify-content: center;
-      padding: 1.2rem 0;
-      margin: 1.5rem 0rem;
+      padding: 0.55rem 0;
+      // margin: 1rem 0;
+      margin-bottom: 0rem;
     }
     @media only screen and (max-width: $bp-smallest) {
-      font-size: 2.2rem;
       width: 90vw;
       margin-inline: 0 auto;
       justify-content: center;
-      padding: 1rem 0;
-      margin: 1rem 0 !important;
+      padding: 0.45rem 0.5rem;
+      margin: 0;
     }
     @media only screen and (max-width: 320px) {
-      margin: 1px 0 !important;
-      padding: 7px 0 !important;
+      margin: 0;
+      // margin-block: 0.5rem;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
       width: 90vw;
-      // margin: 0 ;
-      // margin-block: 0.3rem !important;
     }
     svg {
       height: 2.4rem;
@@ -716,7 +742,7 @@
     // margin-right: 7rem;
     // margin-left: 0;
     min-width: 100%;
-    min-height: 75vh;
+    min-height: 100vh;
     max-height: 70vh;
     gap: 1rem;
     align-items: center;
@@ -748,12 +774,19 @@
       // overflow-y: scroll;
       margin-bottom: 15rem;
       padding-top: 2rem;
-      min-height: 65vh;
-      max-height: 0vh;
+      min-height: 77vh;
+      // max-height: 100vh;
+      // max-height: 0vh;
       // padding-left: 3.6rem;
       justify-content: center;
       gap: 1.5rem;
       padding-bottom: 6rem;
+
+      // padding-inline: 1rem;
+    }
+    @media only screen and (max-width: 320px) {
+     
+      min-height: 66vh;
 
       // padding-inline: 1rem;
     }
@@ -857,7 +890,7 @@
   border-top-left-radius: 8rem;
   @media only screen and (max-width: $bp-small) {
     left: 0;
-    top: 11rem;
+    top: 11.5rem;
     min-width: 100vw;
     max-width: 100vw;
     min-height: 100vh;
@@ -1137,12 +1170,13 @@
             background-color: #fff;
             @media only screen and (max-width: $bp-small) {
               font-size: 2rem;
-              min-width: 8rem;
+              min-width: 10rem;
               height: 6rem;
             }
             @media only screen and (max-width: $bp-smallest) {
               font-size: 1.4rem;
               width: 10rem;
+              min-width: 8rem;
               height: 3.5rem;
             }
             // padding-right: 1rem;
@@ -1187,6 +1221,7 @@
             max-width: 4rem;
             min-width: 4rem;
             font-size: 2.5rem;
+            height: 4rem;
           }
           @media only screen and (max-width: $bp-smallest) {
             max-width: 3rem;
