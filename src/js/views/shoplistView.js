@@ -65,7 +65,6 @@ class shoplistView extends View {
     return this._data.map(this._generateMarkupPrev).join("");
   }
   _generateMarkupPrev(ing) {
-    console.log(ing);
     return `
     <li class="shopperItem" data-itemid=${ing.id}>
       <div class="listPack">

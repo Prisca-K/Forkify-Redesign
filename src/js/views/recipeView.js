@@ -189,7 +189,6 @@ class RecipeView extends View {
   }
 
   _addHandlerHideWindow2() {
-    console.log(this._btnCloser);
     this._btnCloser.addEventListener("click", this.toggleWindow2.bind(this));
     this._overlay2.addEventListener("click", this.toggleWindow2.bind(this));
     this._prevRecipe.addEventListener("click", this.toggleWindow21.bind(this));
@@ -202,7 +201,6 @@ class RecipeView extends View {
     const logoimgs = document.querySelector(".logo-imgsrec");
     headbtn.classList.add("animate");
     if (headbtn.classList.contains("animate")) {
-      console.log("time");
       setTimeout(() => {
         headbtn2.style.left = "0";
         logoimgs.style.width = "18rem";

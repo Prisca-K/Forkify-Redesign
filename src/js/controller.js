@@ -30,7 +30,6 @@ window.onload = function () {
   that.open("GET", "https://forkify-api.herokuapp.com", false);
   try {
     that.send();
-    console.log(that.status);
   } catch (exception) {
     if (exception.name === "NetworkError") {
       console.log(that.status);
@@ -48,7 +47,6 @@ window.onload = function () {
       loadererr.style.display = "none";
     }
   }
-  console.log("loaded");
   setTimeout(() => {
     document.body.classList.remove("page-loader");
     model.sliders();
@@ -315,7 +313,6 @@ const controlSort = function () {
   sortView.renderSort();
   const input1 = document.querySelector(".input1");
   const box1 = input1.querySelector(".box1");
-  console.log(box1);
   const searchnameham = document.querySelector(".searchnameham");
   const searchname = document.querySelector(".searchname");
   searchnameham.innerHTML = "";

@@ -61,7 +61,7 @@ export const loadRecipe = async function (id) {
       state.recipe.bookmarked = true;
     else state.recipe.bookmarked = false;
 
-    console.log(state.recipe);
+    // console.log(state.recipe);
   } catch (err) {
     // Temp error handling
     err = "TypeError: Failed to Fetch"
@@ -103,8 +103,8 @@ export const loadSearchResults = async function (query) {
     state.search.query = query;
 
     const data = await AJAX(`${API_URL}?search=${query}&key=${KEY}`);
-    console.log(data);
-    console.log(state.search.results);
+    // console.log(data);
+    // console.log(state.search.results);
     state.search.results = data.data.recipes.map((rec) => {
       return {
         id: rec.id,
@@ -119,7 +119,7 @@ export const loadSearchResults = async function (query) {
     const searchname = document.querySelector(".searchname");
     const searchnameham = document.querySelector(".searchnameham");
     const modquery = query.charAt(0).toUpperCase() + query.slice(1);
-    console.log(query[0]);
+    // console.log(query[0]);
     searchname.innerHTML = `Searches for ${modquery}`;
     searchnameham.innerHTML = `Searches for ${modquery}`;
     const newres = document.querySelector(".newresult");
@@ -138,10 +138,10 @@ export const loadSearchResultsSort = async function (query, value, ing = true) {
   try {
     state.search.query = query;
     const data = await AJAX(`${API_URL}?search=${query}&key=${KEY}`);
-    console.log(data.data.recipes);
+    // console.log(data.data.recipes);
     const val = value;
     data.data.recipes.map(async (rec, i) => {
-      console.log("not confirmed");
+      // console.log("not confirmed");
       // loadRecipe..........
       const loaddata = await AJAX(`${API_URL}${rec.id}?key=${KEY}`);
       state.recipe2 = createRecipeObject(loaddata);
@@ -149,7 +149,7 @@ export const loadSearchResultsSort = async function (query, value, ing = true) {
       const checkIng = function () {
         if (ing) {
           if (state.recipe2.ingredients.length === val) {
-            console.log("Equal");
+            // console.log("Equal");
             // console.log(state.recipe2.ingredients.length);
             // console.log(value === state.recipe2.ingredients.length);
 
@@ -159,8 +159,8 @@ export const loadSearchResultsSort = async function (query, value, ing = true) {
         if (!ing) {
           if (state.recipe2.cookingTime === val) {
             // console.log("Equal");
-            console.log(state.recipe2.cookingTime);
-            console.log(value === state.recipe2.cookingTime);
+            // console.log(state.recipe2.cookingTime);
+            // console.log(value === state.recipe2.cookingTime);
             return state.recipe2;
           } else return;
         }
@@ -174,16 +174,16 @@ export const loadSearchResultsSort = async function (query, value, ing = true) {
 
       if (checkIng()) {
         const cheeec = checkIng();
-        console.log(cheeec);
+        // console.log(cheeec);
 
         statesort.keeprec.push(cheeec);
       } else if (!checkIng()) {
         return;
       }
-      console.log("figure it");
-      console.log(statesort.keeprec);
+      // console.log("figure it");
+      // console.log(statesort.keeprec);
       statesort.search.results = statesort.keeprec.map((rece) => {
-        console.log(rece);
+        // console.log(rece);
         return rece;
         // return {
         //   id: rece.id,
@@ -199,7 +199,7 @@ export const loadSearchResultsSort = async function (query, value, ing = true) {
     const searchname = document.querySelector(".searchname");
     const searchnameham = document.querySelector(".searchnameham");
     const modquery = query.charAt(0).toUpperCase() + query.slice(1);
-    console.log(query[0]);
+    // console.log(query[0]);
     searchname.innerHTML = `Searches for ${modquery}`;
     searchnameham.innerHTML = `Searches for ${modquery}`;
   } catch (err) {
@@ -220,7 +220,7 @@ export const getSearchResultsPage = function (
 
   const start = (page - 1) * state.search.resultsPerPage; // 0
   const end = page * state.search.resultsPerPage; // 9
-  console.log(state.search.results);
+  // console.log(state.search.results);
   if (load) loader;
   return state.search.results.slice(start, end);
 };
@@ -231,10 +231,10 @@ export const getSearchResultsPagesort = function (
 
   const start = (page - 1) * statesort.search.resultsPerPage; // 0
   const end = page * statesort.search.resultsPerPage; // 9
-  console.log(statesort.search.results);
+  // console.log(statesort.search.results);
   // setTimeout(() => {
   for (let i = 0; i < 2; i++) {
-    console.log(i);
+    // console.log(i);
     if ((i = 1)) {
       if (
         statesort.keeprec.length === 0 &&
@@ -247,7 +247,7 @@ export const getSearchResultsPagesort = function (
     // }, 500);
   }
 
-  console.log(statesort.keeprec);
+  // console.log(statesort.keeprec);
   return statesort.search.results.slice(start, end);
 };
 
@@ -291,7 +291,7 @@ const init = function () {
 };
 init();
 export const shopper = function (val) {
-  console.log(val);
+  // console.log(val);
 };
 // shoplist view
 export const persistShoplist = function () {
@@ -314,7 +314,7 @@ export const checkadd = function (id) {
 
   state.shoplist.forEach((el) => {
     if (el.id === id) {
-      console.log("checked");
+      // console.log("checked");
       el.checked = true;
       state.shoplist.checker = true;
     }
@@ -325,7 +325,7 @@ export const checkrem = function (id) {
   // Add bookmark
   state.shoplist.forEach((el) => {
     if (el.id === id) {
-      console.log("unchecked");
+      // console.log("unchecked");
       el.checked = false;
       state.shoplist.checker = false;
     }
@@ -407,9 +407,9 @@ export const intersectApi = function () {
 
       if (entry.isIntersecting) {
         entry.target.classList.add("show");
-        console.log(entry.target);
+        // console.log(entry.target);
         observer.unobserve(entry.target);
-        console.log(imgfig);
+        // console.log(imgfig);
       } else {
         entry.target.classList.remove("show");
         return;
@@ -454,7 +454,7 @@ export const darkMode = function () {
   darkBtn.addEventListener("click", () => {
     darkMode = localStorage.getItem("darkMode");
     if (darkMode !== "enabled") {
-      console.log("yooooo");
+      // console.log("yooooo");
       targMoon.classList.add("translate");
       targSun.classList.remove("translate");
       enableDarkMode();
@@ -525,10 +525,10 @@ export const offcanvas = function () {
       bmark.style.minWidth = "105rem";
       navinner.forEach((nav) => {
         nav.style.paddingInline = "2rem";
-        console.log(nav);
+        // console.log(nav);
       });
-      console.log(droping);
-      console.log(droping2);
+      // console.log(droping);
+      // console.log(droping2);
       newres.style.gap = "0.5rem";
       // newres.style.paddingInline = "1rem";
       searchicon.style.display = "none";
@@ -594,7 +594,7 @@ export const offcanvas = function () {
       // min-height: 12rem;
       // max-height: 12rem;
 
-      console.log("input");
+      // console.log("input");
       inni.forEach((inn) => {
         inn.style.display = "block";
         inn.style.transition = "display 1s ease";
@@ -705,7 +705,7 @@ export const offcanvas = function () {
       droping.classList.remove("ing-ell");
       droping2.classList.remove("ing-ell");
       pagination.style.left = "25rem";
-      console.log(newres.childNodes);
+      // console.log(newres.childNodes);
       newres.style.gap = "0.5rem";
       navtxticon.style.paddingInline = "2rem";
       navinner.forEach((nav) => {
@@ -774,7 +774,7 @@ export const offcanvas = function () {
       // min-height: 12rem;
       // max-height: 12rem;
 
-      console.log("input");
+      // console.log("input");
       inni.forEach((inn) => {
         inn.style.display = "block";
         inn.style.transition = "display 1s ease";
@@ -1013,10 +1013,10 @@ export const sliders = function () {
       });
       const scrollerInner = document.querySelector(".scroller-inner");
       const scrollerContent = Array.from(scrollerInner.children);
-      console.log(scrollerContent);
+      // console.log(scrollerContent);
       scrollerContent.forEach((item) => {
         const duplicItem = item.cloneNode(true);
-        console.log(duplicItem);
+        // console.log(duplicItem);
         duplicItem.setAttribute("aria-hidden", true);
         scrollerInner.appendChild(duplicItem);
       });

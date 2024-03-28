@@ -38,6 +38,7 @@ class sortView extends View {
       dropmenu.classList.toggle("hide");
       copy.classList.toggle("display");
       if (media.matches) {
+        console.log("matches");
         if (!sortBtn.classList.contains("trans-left")) {
           sortBtn.classList.add("trans-left");
         } else {
@@ -107,7 +108,10 @@ class sortView extends View {
       newres.style.justifyContent = "center";
       newres.style.paddingBottom = "7rem";
       newres.style.gap = "0.5rem";
-      left.style.left = "-100rem";
+      const min_media = window.matchMedia("(max-width:890px)");
+      if (min_media.matches) {
+        left.style.left = "-100rem";
+      }
 
       // document.location.reload();
 
